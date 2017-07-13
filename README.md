@@ -15,7 +15,7 @@ import Ukelele from './ukelele'
 ...
 render() {
     return(
-        <Ukelele/>
+        <Ukelele chords={'A'}/>
     )
 }
 ...
