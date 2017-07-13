@@ -1,0 +1,35 @@
+{
+  "name": "ukelele-react-module",
+  "version": "1.0.0",
+  "description": "This is a very basic react module that generats the headstock and the strings of an ukelele in svg.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newpatriks/ukelele-react-module.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/newpatriks/ukelele-react-module/issues"
+  },
+  "homepage": "https://github.com/newpatriks/ukelele-react-module#readme",
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "webpack": "^1.14.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "sass": "^0.5.0"
+  }
+}
