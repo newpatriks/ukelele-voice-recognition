@@ -12,15 +12,15 @@ class App extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(e) {
-        var target = e.target;
+        let target = e.target;
         this.setState({
             currentChord: target.options[target.selectedIndex].value
         });
     }
     render() {
         let dropDownOptions = [];
-        var keys = Object.keys(CHORDS);
-        for (var key in CHORDS) {
+        let keys = Object.keys(CHORDS);
+        for (let key in CHORDS) {
             if (CHORDS.hasOwnProperty(key)) {
                 dropDownOptions.push(<option id={key} value={key}>{key}</option>);
             }

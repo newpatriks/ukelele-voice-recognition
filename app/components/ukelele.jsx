@@ -7,21 +7,21 @@ class Ukelele extends React.Component {
         super();
     }
 	render() {
-        var svgns = "http://www.w3.org/2000/svg";
-        var verticalOffset = 50;
-        var headStockOffset = 10;
-        var fretWidth = 150;
-        var circleRadius = 20;
-        var height = 180;
+        let svgns = "http://www.w3.org/2000/svg";
+        let verticalOffset = 50;
+        let headStockOffset = 10;
+        let fretWidth = 150;
+        let circleRadius = 20;
+        let height = 180;
 
-        var stringYPosition = [verticalOffset, height / 3 + verticalOffset, height * 2 / 3 + verticalOffset, height + verticalOffset];
+        let stringYPosition = [verticalOffset, height / 3 + verticalOffset, height * 2 / 3 + verticalOffset, height + verticalOffset];
 
-        var fret1X = fretWidth + headStockOffset;
-        var fret2X = fretWidth*2 + headStockOffset;
-        var fret3X = fretWidth*3 + headStockOffset;
+        let fret1X = fretWidth + headStockOffset;
+        let fret2X = fretWidth*2 + headStockOffset;
+        let fret3X = fretWidth*3 + headStockOffset;
 
-        var circleComponents = [];
-        var chordSchema;
+        let circleComponents = [];
+        let chordSchema;
 
         if (this.props.chord) {
             console.log(CHORDS);
