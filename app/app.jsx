@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import CHORDS from './chords/ukelele.js'
 import Ukelele from './components/ukelele.jsx'
+import SpeechRecognition from './components/speech-recognition.jsx'
 
 class App extends React.Component {
     constructor(props) {
@@ -10,6 +11,13 @@ class App extends React.Component {
             currentChord: 'A'
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
+    }
+    handleUpdate(e) {
+        console.log(e);
+        this.setState({
+            currentChord: e
+        });
     }
     handleChange(e) {
         let target = e.target;
@@ -31,7 +39,8 @@ class App extends React.Component {
                 <select onChange={this.handleChange}>
                     {dropDownOptions.map(option => (option))}
                 </select>
-                <input type='text' />
+                <input className='input-chord-name' type='text' value={this.state.currentChord} />
+                <SpeechRecognition onSpeechUpdate={this.handleUpdate}/>
                 <Ukelele chord={this.state.currentChord}/>
             </div>
         );
