@@ -1,0 +1,32 @@
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #046380;
+  font-size: 20px;
+  color: #E6E2AF; }
+
+input:focus {
+  outline: none; }
+
+input {
+  position: relative;
+  border: none;
+  background: none;
+  color: #E6E2AF;
+  font-size: 50px;
+  outline-color: none;
+  display: block;
+  padding: 5px;
+  text-align: center;
+  border-bottom: 1px solid #E6E2AF;
+  width: 100px;
+  margin: 100px auto 0; }
+
+svg {
+  position: relative;
+  width: 550px;
+  display: block;
+  margin: 30px auto; }
+
+/*# sourceMappingURL=main.css.map */

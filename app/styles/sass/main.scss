@@ -1,0 +1,45 @@
+$bg-color: #046380;
+$txt-color: #E6E2AF;
+
+$xxs: 10px;
+$xs: 12px;
+$s: 16px;
+$m: 20px;
+$l: 30px;
+$xl: 50px;
+$xxl: 90px;
+
+body {
+    position: relative;
+    margin: 0; padding: 0;
+    background-color: $bg-color;
+    font-size: $m;
+    color: $txt-color;
+}
+
+input:focus {
+    outline: none;
+}
+
+input {
+    position: relative;
+    border: none;
+    background: none;
+    color: $txt-color;
+    font-size: $xl;
+    outline-color: none;
+    display: block;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid $txt-color;
+
+    width: 100px;
+    margin: 100px auto 0;
+}
+
+svg {
+    position: relative;
+    width: 550px;
+    display: block;
+    margin: 30px auto;
+}

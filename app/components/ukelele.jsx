@@ -10,15 +10,12 @@ class Ukelele extends React.Component {
         let svgns = "http://www.w3.org/2000/svg";
         let verticalOffset = 50;
         let headStockOffset = 10;
-        let fretWidth = 150;
+        let fretWidth = 100;
         let circleRadius = 20;
         let height = 180;
 
         let stringYPosition = [verticalOffset, height / 3 + verticalOffset, height * 2 / 3 + verticalOffset, height + verticalOffset];
-
-        let fret1X = fretWidth + headStockOffset;
-        let fret2X = fretWidth*2 + headStockOffset;
-        let fret3X = fretWidth*3 + headStockOffset;
+        let fretXPosition = [fretWidth + headStockOffset, fretWidth*2 + headStockOffset, fretWidth*3 + headStockOffset, fretWidth*4 + headStockOffset];
 
         let circleComponents = [];
         let chordSchema;
@@ -40,15 +37,18 @@ class Ukelele extends React.Component {
 
     return (
     	<div>
-			<svg width="500" height="400" id="svgOne">
+			<svg width="550" height="400" id="svgOne">
                 <rect x={headStockOffset} y={stringYPosition[0]} width={headStockOffset} height={height} fill="transparent" stroke="black" strokeWidth={1}></rect>
-                <line x1={headStockOffset*2} y1={stringYPosition[0]} x2="550" y2={stringYPosition[0]} stroke="black" strokeWidth={1}></line>
-                <line x1={headStockOffset*2} y1={stringYPosition[1]} x2="550" y2={stringYPosition[1]} stroke="black" strokeWidth={1}></line>
-                <line x1={headStockOffset*2} y1={stringYPosition[2]} x2="550" y2={stringYPosition[2]} stroke="black" strokeWidth={1}></line>
-                <line x1={headStockOffset*2} y1={stringYPosition[3]} x2="550" y2={stringYPosition[3]} stroke="black" strokeWidth={1}></line>
-                <line x1={fret1X} y1={verticalOffset} x2={fret1X} y2={height + verticalOffset} stroke="black" strokeWidth={0.5}></line>
-                <line x1={fret2X} y1={verticalOffset} x2={fret2X} y2={height + verticalOffset} stroke="black" strokeWidth={0.5}></line>
-                <line x1={fret3X} y1={verticalOffset} x2={fret3X} y2={height + verticalOffset} stroke="black" strokeWidth={0.5}></line>
+
+                <line x1={headStockOffset*2} y1={stringYPosition[0]} x2="500" y2={stringYPosition[0]} stroke="black" strokeWidth={1}></line>
+                <line x1={headStockOffset*2} y1={stringYPosition[1]} x2="500" y2={stringYPosition[1]} stroke="black" strokeWidth={1}></line>
+                <line x1={headStockOffset*2} y1={stringYPosition[2]} x2="500" y2={stringYPosition[2]} stroke="black" strokeWidth={1}></line>
+                <line x1={headStockOffset*2} y1={stringYPosition[3]} x2="500" y2={stringYPosition[3]} stroke="black" strokeWidth={1}></line>
+
+                <line x1={fretXPosition[0]} y1={verticalOffset} x2={fretXPosition[0]} y2={height + verticalOffset} stroke="black" strokeWidth={0.5}></line>
+                <line x1={fretXPosition[1]} y1={verticalOffset} x2={fretXPosition[1]} y2={height + verticalOffset} stroke="black" strokeWidth={0.5}></line>
+                <line x1={fretXPosition[2]} y1={verticalOffset} x2={fretXPosition[2]} y2={height + verticalOffset} stroke="black" strokeWidth={0.5}></line>
+                <line x1={fretXPosition[3]} y1={verticalOffset} x2={fretXPosition[3]} y2={height + verticalOffset} stroke="black" strokeWidth={0.5}></line>
 
                 {circleComponents.map(circle => (circle))}
         </svg>

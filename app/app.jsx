@@ -31,6 +31,7 @@ class App extends React.Component {
                 <select onChange={this.handleChange}>
                     {dropDownOptions.map(option => (option))}
                 </select>
+                <input type='text' />
                 <Ukelele chord={this.state.currentChord}/>
             </div>
         );
