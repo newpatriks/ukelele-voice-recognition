@@ -1,27 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-const CHORDS = {
-	'A': [{
-        string: [3],
-        fret: 1,
-        fingerId: 1
-    },{
-        string: [4],
-        fret: 2,
-        fingerId: 2
-    }],
-    'Am': [{
-        string: [4],
-        fret: 2,
-        fingerId: 1
-    }],
-    'C':[{
-        string: [1],
-        fret: 3,
-        fingerId: 1
-    }]
-};
+import CHORDS from '../chords/ukelele.js'
 
 class Ukelele extends React.Component {
 	constructor() {
@@ -45,6 +24,7 @@ class Ukelele extends React.Component {
         var chordSchema;
 
         if (this.props.chord) {
+            console.log(CHORDS);
             if (CHORDS[this.props.chord]) {
                 chordSchema = CHORDS[this.props.chord];
                 chordSchema.forEach(function(finger) {

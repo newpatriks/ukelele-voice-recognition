@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
+import CHORDS from './chords/ukelele.js'
 import Ukelele from './components/ukelele.jsx'
 
 class App extends React.Component {
@@ -18,12 +18,18 @@ class App extends React.Component {
         });
     }
     render() {
+        let dropDownOptions = [];
+        var keys = Object.keys(CHORDS);
+        for (var key in CHORDS) {
+            if (CHORDS.hasOwnProperty(key)) {
+                dropDownOptions.push(<option id={key} value={key}>{key}</option>);
+            }
+        }
+
         return(
             <div>
-                <select id="" className="" onChange={this.handleChange}>
-                    <option value='A'>A</option>
-                    <option value='Am'>Am</option>
-                    <option value='C'>C</option>
+                <select onChange={this.handleChange}>
+                    {dropDownOptions.map(option => (option))}
                 </select>
                 <Ukelele chord={this.state.currentChord}/>
             </div>
