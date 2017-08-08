@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import CHORDS from './chords/ukelele.js'
 import Ukelele from './components/ukelele.jsx'
 import SpeechRecognition from './components/speech-recognition.jsx'
 
@@ -10,38 +9,20 @@ class App extends React.Component {
         this.state = {
             currentChord: 'A'
         };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleTranscript = this.handleTranscript.bind(this);
     }
-    handleUpdate(e) {
-        console.log(e);
+    handleTranscript(e) {
         this.setState({
             currentChord: e
         });
     }
-    handleChange(e) {
-        let target = e.target;
-        this.setState({
-            currentChord: target.options[target.selectedIndex].value
-        });
-    }
-    render() {
-        let dropDownOptions = [];
-        let keys = Object.keys(CHORDS);
-        for (let key in CHORDS) {
-            if (CHORDS.hasOwnProperty(key)) {
-                dropDownOptions.push(<option id={key} value={key}>{key}</option>);
-            }
-        }
 
+    render() {
         return(
             <div>
-                <select onChange={this.handleChange}>
-                    {dropDownOptions.map(option => (option))}
-                </select>
                 <input className='input-chord-name' type='text' value={this.state.currentChord} />
-                <SpeechRecognition onSpeechUpdate={this.handleUpdate}/>
-                <Ukelele chord={this.state.currentChord}/>
+                <SpeechRecognition onSpeechUpdate={this.handleTranscript}/>
+                <Ukelele chord={this.state.currentChord} width="500" height="300"/>
             </div>
         );
     }

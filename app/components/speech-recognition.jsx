@@ -6,18 +6,18 @@ class SpeechRecognition extends React.Component {
         super();
     }
 	render() {
-		var that = this;
-		var lang = ['English',['en-US', 'United States']];
-		var dialect = ['en-US', 'United States'];
-		var create_email = false;
-		var final_transcript = '';
-		var recognizing = true;
-		var ignore_onend;
-		var start_timestamp;
+		let that = this;
+		let lang = ['English',['en-US', 'United States']];
+		let dialect = ['en-US', 'United States'];
+		let create_email = false;
+		let final_transcript = '';
+		let recognizing = true;
+		let ignore_onend;
+		let start_timestamp;
 		if (!('webkitSpeechRecognition' in window)) {
 			upgrade();
 		} else {
-			var recognition = new webkitSpeechRecognition();
+			let recognition = new webkitSpeechRecognition();
 
 			recognition.continuous = true;
 			recognition.interimResults = true;
@@ -56,7 +56,7 @@ class SpeechRecognition extends React.Component {
 			}
 			if (window.getSelection) {
 				window.getSelection().removeAllRanges();
-				var range = document.createRange();
+				let range = document.createRange();
 				range.selectNode(document.getElementsByClassName('input-chord-name')[0]);
 				window.getSelection().addRange(range);
 			}
@@ -67,8 +67,9 @@ class SpeechRecognition extends React.Component {
 		};
 
 		recognition.onresult = function(event) {
-			var interim_transcript = '';
-			for (var i = event.resultIndex; i < event.results.length; ++i) {
+			let interim_transcript = '';
+			let parsedWord = 'A';
+			for (let i = event.resultIndex; i < event.results.length; ++i) {
 				if (event.results[i].isFinal) {
 					final_transcript = event.results[i][0].transcript;
 				} else {
@@ -76,9 +77,31 @@ class SpeechRecognition extends React.Component {
 				}
 			}
 			final_transcript = final_transcript.toUpperCase();
-			console.log(final_transcript);
+			// console.log(final_transcript);
 			if (final_transcript) {
-				that.props.onSpeechUpdate(final_transcript);
+
+				switch(final_transcript) {
+		            case 'HEY':
+		                parsedWord = 'A';
+		                break;
+		            case 'BE':
+		            case 'BEAT':
+		            case 'BEE':
+		                parsedWord = 'B';
+		                break;
+		            case 'SEA':
+		            case 'SEE':
+		                parsedWord = 'C';
+		                break;
+		            case 'HE':
+		                parsedWord = 'E';
+		                break;
+		            default:
+		                // parsedWord = 'A';
+						parsedWord = final_transcript
+		        }
+
+				that.props.onSpeechUpdate(parsedWord);
 			}
 		};
 	}
