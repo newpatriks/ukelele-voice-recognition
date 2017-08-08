@@ -1,21 +1,21 @@
 {
-  "name": "ukelele-react-module",
+  "name": "ukelele-voice-recognition",
   "version": "1.0.0",
-  "description": "This is a very basic react module that generats the headstock and the strings of an ukelele in svg.",
+  "description": "Voice recognition app using a react ukelele module that allows the user to say the chord desired.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/newpatriks/ukelele-react-module.git"
+    "url": "git+https://github.com/newpatriks/ukelele-voice-recognition.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/newpatriks/ukelele-react-module/issues"
+    "url": "https://github.com/newpatriks/ukelele-voice-recognition/issues"
   },
-  "homepage": "https://github.com/newpatriks/ukelele-react-module#readme",
+  "homepage": "https://github.com/newpatriks/ukelele-voice-recognition#readme",
   "dependencies": {
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
